@@ -4,10 +4,9 @@ import playgroundThreeMixin from 'playground.js/plugins/playground.three.js';
 import { WebGLRenderer } from 'three';
 import game from './game';
 
-@mixins(playgroundThreeMixin)
-class ThreeApplication extends PlaygroundApplication {}
+mixins(playgroundThreeMixin)(PlaygroundApplication);
 
-const app = new ThreeApplication({
+new PlaygroundApplication({
   create() {
     this.renderer = new WebGLRenderer();
     this.container.appendChild(this.renderer.domElement);
